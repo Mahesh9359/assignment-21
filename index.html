@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Roller</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .dice-roller-container {
+            background: #1e1e2f;
+            border-radius: 20px;
+            box-shadow: 0 0 20px #0ff;
+            padding: 30px;
+            width: 320px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .dice-roller-container:hover {
+            transform: scale(1.02);
+        }
+
+        .dice-img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .roll-btn {
+            background: #0ff;
+            color: #000;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .roll-btn:hover {
+            background: #0cc;
+        }
+
+        @keyframes roll {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+            50% {
+                transform: rotate(180deg) scale(1.2);
+            }
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+
+        .animation {
+            animation: roll 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dice-roller-container">
+        <h2>🎲 Dice Roller</h2>
+        <img src="./dice (1).png" class="dice-img" id="dice-img" alt="dice" />
+        <br>
+        <button class="roll-btn" onclick="rollDice()">Roll Dice</button>
+    </div>
+
+    <script>
+        const diceImg = document.getElementById("dice-img");
+
+        function rollDice() {
+            diceImg.classList.remove("animation"); 
+            void diceImg.offsetWidth;
+            const randomNumber = Math.floor(Math.random() * 6) + 1;
+            diceImg.src = `./dice (${randomNumber}).png`;
+            diceImg.classList.add("animation");
+        }
+    </script>
+</body>
+
+</html>
