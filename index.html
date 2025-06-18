@@ -70,7 +70,7 @@
 <body>
     <div class="dice-roller-container">
         <h2>🎲 Dice Roller</h2>
-        <img src="./dice (1).png" class="dice-img" id="dice-img" alt="dice" />
+        <img src="./images/dice (1).png" class="dice-img" id="dice-img" alt="dice" />
         <br>
         <button class="roll-btn" onclick="rollDice()">Roll Dice</button>
     </div>
@@ -82,7 +82,7 @@
             diceImg.classList.remove("animation"); 
             void diceImg.offsetWidth;
             const randomNumber = Math.floor(Math.random() * 6) + 1;
-            diceImg.src = `./dice (${randomNumber}).png`;
+            diceImg.src = `./images/dice (${randomNumber}).png`;
             diceImg.classList.add("animation");
         }
     </script>
